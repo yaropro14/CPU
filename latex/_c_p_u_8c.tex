@@ -1,0 +1,190 @@
+\hypertarget{_c_p_u_8c}{}\section{C\+P\+U.\+c File Reference}
+\label{_c_p_u_8c}\index{C\+P\+U.\+c@{C\+P\+U.\+c}}
+
+
+\mbox{\hyperlink{struct_stack}{Stack}} calss. There are all needed functions for work with stack.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}commands.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_c_p_u_8c_a8fe83ac76edc595f6b98cd4a4127aed5}\label{_c_p_u_8c_a8fe83ac76edc595f6b98cd4a4127aed5}} 
+\#define {\bfseries E\+R\+R\+OR}~-\/1
+\item 
+\mbox{\Hypertarget{_c_p_u_8c_a4d32b36c9a5ab4aa9acec5da4ab6469f}\label{_c_p_u_8c_a4d32b36c9a5ab4aa9acec5da4ab6469f}} 
+\#define {\bfseries N\+\_\+\+R\+E\+GS}~4
+\item 
+\#define \mbox{\hyperlink{_c_p_u_8c_a2dcf8c45f945dd0c4301a94700f2112c}{M\+E\+M\+\_\+\+S\+I\+ZE}}~4096
+\item 
+\#define \mbox{\hyperlink{_c_p_u_8c_aa73c7f8b37ba0332e8d01fb2df759f6c}{C\+M\+D\+\_\+\+D\+EF}}(name,  num,  code)~case num\+: code break;
+\item 
+\mbox{\Hypertarget{_c_p_u_8c_a21538a757097d3cdbdffdfaf3cb5e570}\label{_c_p_u_8c_a21538a757097d3cdbdffdfaf3cb5e570}} 
+\#define {\bfseries R\+AX}~\mbox{\hyperlink{_c_p_u_8c_a43e4807fdd4d532b357856a4d5caad74}{reg}}\mbox{[}0\mbox{]};
+\item 
+\mbox{\Hypertarget{_c_p_u_8c_a649ad68faf690bb4e9218dd86aab9b6d}\label{_c_p_u_8c_a649ad68faf690bb4e9218dd86aab9b6d}} 
+\#define {\bfseries R\+BX}~\mbox{\hyperlink{_c_p_u_8c_a43e4807fdd4d532b357856a4d5caad74}{reg}}\mbox{[}1\mbox{]};
+\item 
+\mbox{\Hypertarget{_c_p_u_8c_adb963a7b6244a68ca77fa36e30c16ee3}\label{_c_p_u_8c_adb963a7b6244a68ca77fa36e30c16ee3}} 
+\#define {\bfseries R\+CX}~\mbox{\hyperlink{_c_p_u_8c_a43e4807fdd4d532b357856a4d5caad74}{reg}}\mbox{[}2\mbox{]};
+\item 
+\mbox{\Hypertarget{_c_p_u_8c_a3e42cec965e928dafeaa8276159e4921}\label{_c_p_u_8c_a3e42cec965e928dafeaa8276159e4921}} 
+\#define {\bfseries R\+DX}~\mbox{\hyperlink{_c_p_u_8c_a43e4807fdd4d532b357856a4d5caad74}{reg}}\mbox{[}3\mbox{]};
+\item 
+\#define \mbox{\hyperlink{_c_p_u_8c_a83551dfdd7485dd63e5fb2d829706bb3}{M\+A\+S\+K\+\_\+\+C\+OM}}~0xff0000
+\item 
+\mbox{\Hypertarget{_c_p_u_8c_a21b419df06f2ae41e69b16ab57088452}\label{_c_p_u_8c_a21b419df06f2ae41e69b16ab57088452}} 
+\#define {\bfseries M\+A\+S\+K\+\_\+\+A\+RG}~0x00ffff
+\item 
+\mbox{\Hypertarget{_c_p_u_8c_a5c3057585831f2594246cef62f3f9090}\label{_c_p_u_8c_a5c3057585831f2594246cef62f3f9090}} 
+\#define {\bfseries M\+A\+K\+E\+\_\+\+C\+OM}(x)~((x \& 0xff0000) $>$$>$ 16)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_c_p_u_8c_affdfe2b846d283e985b4177647d28e56}{run}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$prog\+\_\+stack, struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$ret\+\_\+lable\+\_\+stack)
+\begin{DoxyCompactList}\small\item\em Execute the program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_c_p_u_8c_a1d129da6b82b33e8db9584e079d9ebfe}{loading\+\_\+commands}} (F\+I\+LE $\ast$f\+\_\+bite\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Read comamnds from input file and write their to the memory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_c_p_u_8c_a872423980bff3c20ab9381ad23ba9451}\label{_c_p_u_8c_a872423980bff3c20ab9381ad23ba9451}} 
+void \mbox{\hyperlink{_c_p_u_8c_a872423980bff3c20ab9381ad23ba9451}{print\+\_\+regs}} ()
+\begin{DoxyCompactList}\small\item\em Print regisrers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_c_p_u_8c_a0ed1e5afce0951a5e13ccc2b1551341a}\label{_c_p_u_8c_a0ed1e5afce0951a5e13ccc2b1551341a}} 
+void \mbox{\hyperlink{_c_p_u_8c_a0ed1e5afce0951a5e13ccc2b1551341a}{memory\+\_\+dump}} ()
+\begin{DoxyCompactList}\small\item\em Print all memory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_c_p_u_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Opens file f\+\_\+bite\+\_\+code and la. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_c_p_u_8c_a69d91e5a09a4a5727e19a36f2a96f85c}{M\+EM}} \mbox{[}\mbox{\hyperlink{_c_p_u_8c_a2dcf8c45f945dd0c4301a94700f2112c}{M\+E\+M\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+int \mbox{\hyperlink{_c_p_u_8c_a43e4807fdd4d532b357856a4d5caad74}{reg}} \mbox{[}4\mbox{]}
+\item 
+int \mbox{\hyperlink{_c_p_u_8c_a5be60e77f422bcd2bb6668e29b90fb7c}{PC}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{struct_stack}{Stack}} calss. There are all needed functions for work with stack. 
+
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_c_p_u_8c_aa73c7f8b37ba0332e8d01fb2df759f6c}\label{_c_p_u_8c_aa73c7f8b37ba0332e8d01fb2df759f6c}} 
+\index{C\+P\+U.\+c@{C\+P\+U.\+c}!C\+M\+D\+\_\+\+D\+EF@{C\+M\+D\+\_\+\+D\+EF}}
+\index{C\+M\+D\+\_\+\+D\+EF@{C\+M\+D\+\_\+\+D\+EF}!C\+P\+U.\+c@{C\+P\+U.\+c}}
+\subsubsection{\texorpdfstring{C\+M\+D\+\_\+\+D\+EF}{CMD\_DEF}}
+{\footnotesize\ttfamily \#define C\+M\+D\+\_\+\+D\+EF(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{num,  }\item[{}]{code }\end{DoxyParamCaption})~case num\+: code break;}
+
+This define is used to execute the command \mbox{\Hypertarget{_c_p_u_8c_a83551dfdd7485dd63e5fb2d829706bb3}\label{_c_p_u_8c_a83551dfdd7485dd63e5fb2d829706bb3}} 
+\index{C\+P\+U.\+c@{C\+P\+U.\+c}!M\+A\+S\+K\+\_\+\+C\+OM@{M\+A\+S\+K\+\_\+\+C\+OM}}
+\index{M\+A\+S\+K\+\_\+\+C\+OM@{M\+A\+S\+K\+\_\+\+C\+OM}!C\+P\+U.\+c@{C\+P\+U.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+S\+K\+\_\+\+C\+OM}{MASK\_COM}}
+{\footnotesize\ttfamily \#define M\+A\+S\+K\+\_\+\+C\+OM~0xff0000}
+
+This defines are used for separating argument and command \mbox{\Hypertarget{_c_p_u_8c_a2dcf8c45f945dd0c4301a94700f2112c}\label{_c_p_u_8c_a2dcf8c45f945dd0c4301a94700f2112c}} 
+\index{C\+P\+U.\+c@{C\+P\+U.\+c}!M\+E\+M\+\_\+\+S\+I\+ZE@{M\+E\+M\+\_\+\+S\+I\+ZE}}
+\index{M\+E\+M\+\_\+\+S\+I\+ZE@{M\+E\+M\+\_\+\+S\+I\+ZE}!C\+P\+U.\+c@{C\+P\+U.\+c}}
+\subsubsection{\texorpdfstring{M\+E\+M\+\_\+\+S\+I\+ZE}{MEM\_SIZE}}
+{\footnotesize\ttfamily \#define M\+E\+M\+\_\+\+S\+I\+ZE~4096}
+
+It\textquotesingle{}s size of memory of the C\+PU. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_c_p_u_8c_a1d129da6b82b33e8db9584e079d9ebfe}\label{_c_p_u_8c_a1d129da6b82b33e8db9584e079d9ebfe}} 
+\index{C\+P\+U.\+c@{C\+P\+U.\+c}!loading\+\_\+commands@{loading\+\_\+commands}}
+\index{loading\+\_\+commands@{loading\+\_\+commands}!C\+P\+U.\+c@{C\+P\+U.\+c}}
+\subsubsection{\texorpdfstring{loading\+\_\+commands()}{loading\_commands()}}
+{\footnotesize\ttfamily void loading\+\_\+commands (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{f\+\_\+bite\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Read comamnds from input file and write their to the memory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_c_p_u_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{_c_p_u_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{C\+P\+U.\+c@{C\+P\+U.\+c}!main@{main}}
+\index{main@{main}!C\+P\+U.\+c@{C\+P\+U.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Opens file f\+\_\+bite\+\_\+code and la. 
+
+\begin{DoxyWarning}{Warning}
+Main uses file wich you write in launching the C\+PU. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+0 -\/ if program finished correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Error\+: file can\textquotesingle{}t open} & if there are problems opening a file. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{_c_p_u_8c_affdfe2b846d283e985b4177647d28e56}\label{_c_p_u_8c_affdfe2b846d283e985b4177647d28e56}} 
+\index{C\+P\+U.\+c@{C\+P\+U.\+c}!run@{run}}
+\index{run@{run}!C\+P\+U.\+c@{C\+P\+U.\+c}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int run (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{prog\+\_\+stack,  }\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{ret\+\_\+lable\+\_\+stack }\end{DoxyParamCaption})}
+
+
+
+Execute the program. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em prog\+\_\+stack} & -\/ programe stack. \\
+\hline
+\mbox{\tt in}  & {\em ret\+\_\+lable\+\_\+stack} & -\/ lables stack. \\
+\hline
+\mbox{\tt out}  & {\em error.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error, 0 if all correct, -\/1 if there are any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{commands_8h_source}{commands.\+h}}} & is used in this function. \\
+\hline
+{\em Assert ret\+\_\+lable\+\_\+stack} & if there are problems with the transfer of ret\+\_\+lable\+\_\+stack. \\
+\hline
+{\em Assert prog\+\_\+stack} & if there are problems with the transfer of prog\+\_\+stack. \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_c_p_u_8c_a69d91e5a09a4a5727e19a36f2a96f85c}\label{_c_p_u_8c_a69d91e5a09a4a5727e19a36f2a96f85c}} 
+\index{C\+P\+U.\+c@{C\+P\+U.\+c}!M\+EM@{M\+EM}}
+\index{M\+EM@{M\+EM}!C\+P\+U.\+c@{C\+P\+U.\+c}}
+\subsubsection{\texorpdfstring{M\+EM}{MEM}}
+{\footnotesize\ttfamily int M\+EM\mbox{[}\mbox{\hyperlink{_c_p_u_8c_a2dcf8c45f945dd0c4301a94700f2112c}{M\+E\+M\+\_\+\+S\+I\+ZE}}\mbox{]}}
+
+It\textquotesingle{}s size of memory of the C\+PU. \mbox{\Hypertarget{_c_p_u_8c_a5be60e77f422bcd2bb6668e29b90fb7c}\label{_c_p_u_8c_a5be60e77f422bcd2bb6668e29b90fb7c}} 
+\index{C\+P\+U.\+c@{C\+P\+U.\+c}!PC@{PC}}
+\index{PC@{PC}!C\+P\+U.\+c@{C\+P\+U.\+c}}
+\subsubsection{\texorpdfstring{PC}{PC}}
+{\footnotesize\ttfamily int PC}
+
+It\textquotesingle{}s a program counter of the C\+PU. \mbox{\Hypertarget{_c_p_u_8c_a43e4807fdd4d532b357856a4d5caad74}\label{_c_p_u_8c_a43e4807fdd4d532b357856a4d5caad74}} 
+\index{C\+P\+U.\+c@{C\+P\+U.\+c}!reg@{reg}}
+\index{reg@{reg}!C\+P\+U.\+c@{C\+P\+U.\+c}}
+\subsubsection{\texorpdfstring{reg}{reg}}
+{\footnotesize\ttfamily int reg\mbox{[}4\mbox{]}}
+
+It\textquotesingle{}s registors of the C\+PU. 

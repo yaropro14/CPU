@@ -519,6 +519,12 @@ command * make_commands(char ** com_text_str, long int s_num)
 			n_com --;
 		}
 		
+		else if(strncmp(com.com, "SQRT", 4) == 0)
+		{	
+			//printf("%s %D\n", com.arg, n_com);
+			commands[i].com = SQRT;
+		}
+		
 		n_com ++;
 	}
 	return commands;

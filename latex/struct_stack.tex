@@ -1,0 +1,50 @@
+\hypertarget{struct_stack}{}\section{Stack Struct Reference}
+\label{struct_stack}\index{Stack@{Stack}}
+
+
+{\ttfamily \#include $<$stack.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_stack_a8576568a4918a4f03873e53875566e29}\label{struct_stack_a8576568a4918a4f03873e53875566e29}} 
+int {\bfseries canary\+\_\+begin}
+\item 
+\mbox{\Hypertarget{struct_stack_a4c8f547cff2f9a06b9d7fca491051c8c}\label{struct_stack_a4c8f547cff2f9a06b9d7fca491051c8c}} 
+int {\bfseries n\+\_\+data}
+\item 
+\mbox{\Hypertarget{struct_stack_a7b167082a4c6b68566501eaa2423cb3d}\label{struct_stack_a7b167082a4c6b68566501eaa2423cb3d}} 
+int {\bfseries size}
+\item 
+\mbox{\Hypertarget{struct_stack_a5b99484aa1dc08a7a887e19997bc0a37}\label{struct_stack_a5b99484aa1dc08a7a887e19997bc0a37}} 
+Data\+\_\+type $\ast$ {\bfseries data}
+\item 
+\mbox{\Hypertarget{struct_stack_ab3056a7a1c3fd56dcd8155a42782e956}\label{struct_stack_ab3056a7a1c3fd56dcd8155a42782e956}} 
+Data\+\_\+type {\bfseries control\+\_\+sum}
+\item 
+\mbox{\Hypertarget{struct_stack_acc5f6eee79d9d3b61c5e2226c10ac6d6}\label{struct_stack_acc5f6eee79d9d3b61c5e2226c10ac6d6}} 
+int {\bfseries canary\+\_\+end}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+\begin{DoxyParams}{Parameters}
+{\em canary\+\_\+begin} & -\/ Extreme structure element to protect against overlap. \\
+\hline
+{\em n\+\_\+data} & -\/ number of data. \\
+\hline
+{\em size} & -\/ size of stack \\
+\hline
+{\em data} & -\/ Data\+\_\+type massiv. \\
+\hline
+{\em control\+\_\+sum} & -\/ element wich save sum of all elements (for check). \\
+\hline
+{\em canary\+\_\+end} & -\/ Extreme structure element to protect against overlap. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+stack.\+h\end{DoxyCompactItemize}

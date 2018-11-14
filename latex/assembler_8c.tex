@@ -1,0 +1,126 @@
+\hypertarget{assembler_8c}{}\section{assembler.\+c File Reference}
+\label{assembler_8c}\index{assembler.\+c@{assembler.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}com.\+list.\+c\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structinitial__command}{initial\+\_\+command}}
+\item 
+struct \mbox{\hyperlink{struct_l_a_b_l_e_s}{L\+A\+B\+L\+ES}}
+\item 
+struct \mbox{\hyperlink{structcommand}{command}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{assembler_8c_a21538a757097d3cdbdffdfaf3cb5e570}\label{assembler_8c_a21538a757097d3cdbdffdfaf3cb5e570}} 
+\#define {\bfseries R\+AX}~0
+\item 
+\mbox{\Hypertarget{assembler_8c_a649ad68faf690bb4e9218dd86aab9b6d}\label{assembler_8c_a649ad68faf690bb4e9218dd86aab9b6d}} 
+\#define {\bfseries R\+BX}~1
+\item 
+\mbox{\Hypertarget{assembler_8c_adb963a7b6244a68ca77fa36e30c16ee3}\label{assembler_8c_adb963a7b6244a68ca77fa36e30c16ee3}} 
+\#define {\bfseries R\+CX}~2
+\item 
+\mbox{\Hypertarget{assembler_8c_a3e42cec965e928dafeaa8276159e4921}\label{assembler_8c_a3e42cec965e928dafeaa8276159e4921}} 
+\#define {\bfseries R\+DX}~3
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{assembler_8c_ae6d28459b565be58cbefbcc0b66096c1}\label{assembler_8c_ae6d28459b565be58cbefbcc0b66096c1}} 
+typedef struct \mbox{\hyperlink{structinitial__command}{initial\+\_\+command}} {\bfseries str\+\_\+com}
+\item 
+\mbox{\Hypertarget{assembler_8c_a47644d1753380a8ad8aaabea46a49c49}\label{assembler_8c_a47644d1753380a8ad8aaabea46a49c49}} 
+typedef struct \mbox{\hyperlink{structcommand}{command}} {\bfseries command}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{assembler_8c_a73b52bb10772a6ec22fce9998c6549aa}\label{assembler_8c_a73b52bb10772a6ec22fce9998c6549aa}} 
+enum {\bfseries C\+O\+M\+M\+A\+N\+DS} \{ \newline
+{\bfseries L\+A\+B\+EL} = 0x10, 
+{\bfseries P\+U\+S\+H\+\_\+\+V\+AL} = 0x11, 
+{\bfseries P\+U\+S\+H\+\_\+\+A\+DR} = 0x12, 
+{\bfseries P\+U\+S\+H\+\_\+\+R\+EG} = 0x13, 
+\newline
+{\bfseries P\+O\+P\+\_\+\+V\+AL} = 0x21, 
+{\bfseries P\+O\+P\+\_\+\+A\+DR} = 0x22, 
+{\bfseries P\+O\+P\+\_\+\+R\+EG} = 0x23, 
+{\bfseries A\+DD} = 0x3, 
+\newline
+{\bfseries S\+UB} = 0x4, 
+{\bfseries M\+UL} = 0x5, 
+{\bfseries D\+IV} = 0x6, 
+{\bfseries S\+Q\+RT} = 0x15, 
+\newline
+{\bfseries O\+UT} = 0x7, 
+{\bfseries C\+A\+LL} = 0x8, 
+{\bfseries R\+ET} = 0x9, 
+{\bfseries J\+MP} = 0x31, 
+\newline
+{\bfseries JA} = 0x32, 
+{\bfseries JB} = 0x33, 
+{\bfseries JE} = 0x34, 
+{\bfseries J\+AE} = 0x35, 
+\newline
+{\bfseries J\+BE} = 0x36, 
+{\bfseries J\+NE} = 0x37, 
+{\bfseries JW} = 0x38, 
+{\bfseries E\+ND}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{assembler_8c_a495609ed54e5892f3226476f278f296b}\label{assembler_8c_a495609ed54e5892f3226476f278f296b}} 
+char $\ast$ {\bfseries file\+\_\+read} (F\+I\+LE $\ast$f, long int $\ast$file\+\_\+length)
+\item 
+\mbox{\Hypertarget{assembler_8c_a917d7b7eeb1a0e2b88d5b27a1b89fbd7}\label{assembler_8c_a917d7b7eeb1a0e2b88d5b27a1b89fbd7}} 
+long int {\bfseries size\+\_\+of\+\_\+file} (F\+I\+LE $\ast$f\+\_\+in)
+\item 
+\mbox{\Hypertarget{assembler_8c_a28b51b99d94bd0fbb0a8280ced64fc84}\label{assembler_8c_a28b51b99d94bd0fbb0a8280ced64fc84}} 
+char $\ast$$\ast$ {\bfseries make\+\_\+strings} (char $\ast$copy\+\_\+text, long int $\ast$s\+\_\+num)
+\item 
+\mbox{\Hypertarget{assembler_8c_ac385be2222c36ce1104fed5311944ad2}\label{assembler_8c_ac385be2222c36ce1104fed5311944ad2}} 
+long int {\bfseries num\+\_\+of\+\_\+str} (char $\ast$str)
+\item 
+\mbox{\Hypertarget{assembler_8c_a5023b0aef368110efba8d2b0e265805b}\label{assembler_8c_a5023b0aef368110efba8d2b0e265805b}} 
+\mbox{\hyperlink{structcommand}{command}} $\ast$ {\bfseries make\+\_\+commands} (char $\ast$$\ast$com\+\_\+text\+\_\+str, long int s\+\_\+num)
+\item 
+\mbox{\Hypertarget{assembler_8c_a58e9c966ba9699d16a093f43f7c20cc2}\label{assembler_8c_a58e9c966ba9699d16a093f43f7c20cc2}} 
+\mbox{\hyperlink{structcommand}{command}} $\ast$ {\bfseries make\+\_\+jmp\+\_\+command} (char $\ast$$\ast$com\+\_\+text\+\_\+str, \mbox{\hyperlink{structcommand}{command}} $\ast$commands, int s\+\_\+num)
+\item 
+\mbox{\Hypertarget{assembler_8c_a6fadf7a93a3d9467dea750e1b87f6445}\label{assembler_8c_a6fadf7a93a3d9467dea750e1b87f6445}} 
+\mbox{\hyperlink{structinitial__command}{str\+\_\+com}} {\bfseries make\+\_\+str\+\_\+coms} (char $\ast$com\+\_\+str, long int s\+\_\+num)
+\item 
+\mbox{\Hypertarget{assembler_8c_aa7a54fedb9c3e73e33bbb621a04e5194}\label{assembler_8c_aa7a54fedb9c3e73e33bbb621a04e5194}} 
+void {\bfseries do\+\_\+lable} (char $\ast$lable, int n\+\_\+com)
+\item 
+\mbox{\Hypertarget{assembler_8c_aaf62d124fd1ff38d32fd140ab312c85d}\label{assembler_8c_aaf62d124fd1ff38d32fd140ab312c85d}} 
+int {\bfseries search\+\_\+lable} (char $\ast$lable)
+\item 
+\mbox{\Hypertarget{assembler_8c_a0ce6b0a0baaab7ef9667397a6781c391}\label{assembler_8c_a0ce6b0a0baaab7ef9667397a6781c391}} 
+void {\bfseries file\+\_\+print} (char $\ast$$\ast$text\+\_\+str, long int s\+\_\+num, F\+I\+LE $\ast$f\+\_\+out)
+\item 
+\mbox{\Hypertarget{assembler_8c_a411dc61d884f3a9781f5bf8004723e2d}\label{assembler_8c_a411dc61d884f3a9781f5bf8004723e2d}} 
+void {\bfseries file\+\_\+print\+\_\+asm} (\mbox{\hyperlink{structcommand}{command}} $\ast$com, long int s\+\_\+num, F\+I\+LE $\ast$f\+\_\+out)
+\item 
+\mbox{\Hypertarget{assembler_8c_ac7a9dfb333e3b4c0d2738985de4b4401}\label{assembler_8c_ac7a9dfb333e3b4c0d2738985de4b4401}} 
+void {\bfseries file\+\_\+print\+\_\+bin} (\mbox{\hyperlink{structcommand}{command}} $\ast$com, long int s\+\_\+num, F\+I\+LE $\ast$f\+\_\+out)
+\item 
+\mbox{\Hypertarget{assembler_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{assembler_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{assembler_8c_a84c8698a69cc58ec5f39e276c5fa3db7}\label{assembler_8c_a84c8698a69cc58ec5f39e276c5fa3db7}} 
+struct \mbox{\hyperlink{struct_l_a_b_l_e_s}{L\+A\+B\+L\+ES}} {\bfseries lables}
+\end{DoxyCompactItemize}

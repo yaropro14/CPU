@@ -81,6 +81,22 @@ CMD_DEF(DIV, 0x6,
 })
 
 
+CMD_DEF(SQRT, 0x15, 
+{
+	if(prog_stack->n_data < 1)
+	{
+		printf("Too few elements in stack for function\n");
+		//pirntf("\n");
+	}
+	else
+	{
+		int x = stack_pop(prog_stack);
+		x = sqrt(x);
+		stack_push(prog_stack, x);
+	}
+})
+
+
 CMD_DEF(OUT, 0x7, 
 {
 	printf("%d\n", stack_get(prog_stack));
@@ -91,16 +107,12 @@ CMD_DEF(CALL, 0x8,
 {
 	stack_push(ret_lable_stack, PC);
 	PC = arg;
-	printf("ret");
-	stack_print(ret_lable_stack);
 })
 
 
 CMD_DEF(RET, 0x9, 
 {
 	PC = stack_pop(ret_lable_stack);
-	printf("ret");
-	stack_print(ret_lable_stack);
 })
 
 
@@ -122,7 +134,7 @@ CMD_DEF(JB, 0x33,
 })
 
 
-CMD_DEF(JE, 034, 
+CMD_DEF(JE, 0x34, 
 {
 	if(stack_pop(prog_stack) == stack_pop(prog_stack))	PC = arg;
 })
@@ -142,13 +154,13 @@ CMD_DEF(JBE, 0x36,
 
 CMD_DEF(JNE, 0x37, 
 {
-	if(stack_pop(prog_stack) == stack_pop(prog_stack))	PC = arg;
+	if(stack_pop(prog_stack) != stack_pop(prog_stack))	PC = arg;
 })
 
 
 CMD_DEF(END, 0x20, 
 {
-	stack_print(prog_stack);
+	//stack_print(prog_stack);
 	stack_destroy(prog_stack);
 	stack_destroy(ret_lable_stack);
 	return 0;

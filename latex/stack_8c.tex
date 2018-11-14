@@ -1,0 +1,346 @@
+\hypertarget{stack_8c}{}\section{stack.\+c File Reference}
+\label{stack_8c}\index{stack.\+c@{stack.\+c}}
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$ \mbox{\hyperlink{stack_8c_a5f13ae0ff34129c373e9e9cca5b49c46}{stack\+\_\+create}} (int size)
+\begin{DoxyCompactList}\small\item\em Create new stack. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_ab833bdeb4b1373c133d2ce07ef23b09a}{stack\+\_\+destroy}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Destroy stack. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_ab3ee341928ab8f046a9aaf89ad8c71d3}{stack\+\_\+push}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$stack, Data\+\_\+type new\+\_\+element)
+\begin{DoxyCompactList}\small\item\em Push an element to satck. \end{DoxyCompactList}\item 
+Data\+\_\+type \mbox{\hyperlink{stack_8c_a06fbb30e2f65dc05631dc5719f7615b7}{stack\+\_\+pop}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Take an element from satck. \end{DoxyCompactList}\item 
+Data\+\_\+type \mbox{\hyperlink{stack_8c_a5d2d50896c89912ddcfa9ebda4ca2b5e}{stack\+\_\+get}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Get value an last element of satck. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_a3124facd30d07bead9e29e156c9b4967}{stack\+\_\+print}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Print elements of stack. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_a37dc4e8914695ce0822639d2debb6dda}{stack\+\_\+size}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Get size of stack. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_ab0926371b13a987e192829eba03bbb56}{stack\+\_\+clear}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Resets all elements and make n\+\_\+data = 0. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_a266b6e3696ac27d34233103fc2e758b3}{stack\+\_\+\+OK}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Checks the stack for possible errors, if any, then sends their codes to print. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_a968801b6df4daa98b46851157bfbacab}{print\+\_\+error}} (int error)
+\begin{DoxyCompactList}\small\item\em Prints errors by their code. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_ae9b06a4e5b4aa1e99fb27bd47b1209ba}{unit\+\_\+test}} ()
+\begin{DoxyCompactList}\small\item\em Tests all functions. \end{DoxyCompactList}\item 
+Data\+\_\+type \mbox{\hyperlink{stack_8c_a11ada4238d6646adfa775709b15cd97f}{sum\+\_\+of\+\_\+elements}} (struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$stack)
+\begin{DoxyCompactList}\small\item\em Counts the sum of stack elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{stack_8c_a968801b6df4daa98b46851157bfbacab}\label{stack_8c_a968801b6df4daa98b46851157bfbacab}} 
+\index{stack.\+c@{stack.\+c}!print\+\_\+error@{print\+\_\+error}}
+\index{print\+\_\+error@{print\+\_\+error}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+error()}{print\_error()}}
+{\footnotesize\ttfamily void print\+\_\+error (\begin{DoxyParamCaption}\item[{int}]{error }\end{DoxyParamCaption})}
+
+
+
+Prints errors by their code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em error} & -\/ error code. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_ab0926371b13a987e192829eba03bbb56}\label{stack_8c_ab0926371b13a987e192829eba03bbb56}} 
+\index{stack.\+c@{stack.\+c}!stack\+\_\+clear@{stack\+\_\+clear}}
+\index{stack\+\_\+clear@{stack\+\_\+clear}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{stack\+\_\+clear()}{stack\_clear()}}
+{\footnotesize\ttfamily int stack\+\_\+clear (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Resets all elements and make n\+\_\+data = 0. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stack.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 -\/ if all correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the function \char`\"{}stack\+\_\+\+O\+K\char`\"{} finds problems in the stacks, it sends an error code to print problems. \\
+\hline
+{\em Assert stack-\/$>$data } & if there are problems with the transfer of stack-\/$>$data. \\
+\hline
+{\em Assert satck } & if there are problems with the transfer of stack. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_a5f13ae0ff34129c373e9e9cca5b49c46}\label{stack_8c_a5f13ae0ff34129c373e9e9cca5b49c46}} 
+\index{stack.\+c@{stack.\+c}!stack\+\_\+create@{stack\+\_\+create}}
+\index{stack\+\_\+create@{stack\+\_\+create}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{stack\+\_\+create()}{stack\_create()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_stack}{Stack}}$\ast$ stack\+\_\+create (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+Create new stack. 
+
+\begin{DoxyWarning}{Warning}
+Size of stack can\textquotesingle{}t be 0. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em size} & -\/ size of file. \\
+\hline
+\mbox{\tt out}  & {\em new\+\_\+stack} & -\/ pointer to satck. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new\+\_\+stack -\/pointer to satck if all correct, N\+U\+LL if there are any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the function \char`\"{}stack\+\_\+\+O\+K\char`\"{} finds problems in the stacks, it sends an error code to print problems. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_ab833bdeb4b1373c133d2ce07ef23b09a}\label{stack_8c_ab833bdeb4b1373c133d2ce07ef23b09a}} 
+\index{stack.\+c@{stack.\+c}!stack\+\_\+destroy@{stack\+\_\+destroy}}
+\index{stack\+\_\+destroy@{stack\+\_\+destroy}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{stack\+\_\+destroy()}{stack\_destroy()}}
+{\footnotesize\ttfamily int stack\+\_\+destroy (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Destroy stack. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stack} & -\/ stack for destroy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 -\/ if all correct. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the function \char`\"{}stack\+\_\+\+O\+K\char`\"{} finds problems in the stacks, it sends an error code to print problems. \\
+\hline
+{\em Assert stack-\/$>$data } & if there are problems with the transfer of stack-\/$>$data. \\
+\hline
+{\em Assert satck } & if there are problems with the transfer of stack. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_a5d2d50896c89912ddcfa9ebda4ca2b5e}\label{stack_8c_a5d2d50896c89912ddcfa9ebda4ca2b5e}} 
+\index{stack.\+c@{stack.\+c}!stack\+\_\+get@{stack\+\_\+get}}
+\index{stack\+\_\+get@{stack\+\_\+get}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{stack\+\_\+get()}{stack\_get()}}
+{\footnotesize\ttfamily Data\+\_\+type stack\+\_\+get (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Get value an last element of satck. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stack.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Don\textquotesingle{}t take an element from satck. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+value -\/ if all correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the function \char`\"{}stack\+\_\+\+O\+K\char`\"{} finds problems in the stacks, it sends an error code to print problems. \\
+\hline
+{\em Assert stack-\/$>$data } & if there are problems with the transfer of stack-\/$>$data. \\
+\hline
+{\em Assert satck } & if there are problems with the transfer of stack. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_a266b6e3696ac27d34233103fc2e758b3}\label{stack_8c_a266b6e3696ac27d34233103fc2e758b3}} 
+\index{stack.\+c@{stack.\+c}!stack\+\_\+\+OK@{stack\+\_\+\+OK}}
+\index{stack\+\_\+\+OK@{stack\+\_\+\+OK}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{stack\+\_\+\+O\+K()}{stack\_OK()}}
+{\footnotesize\ttfamily int stack\+\_\+\+OK (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Checks the stack for possible errors, if any, then sends their codes to print. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stack.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 -\/ if all correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Assert stack-\/$>$data } & if there are problems with the transfer of stack-\/$>$data. \\
+\hline
+{\em Assert satck } & if there are problems with the transfer of stack. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_a06fbb30e2f65dc05631dc5719f7615b7}\label{stack_8c_a06fbb30e2f65dc05631dc5719f7615b7}} 
+\index{stack.\+c@{stack.\+c}!stack\+\_\+pop@{stack\+\_\+pop}}
+\index{stack\+\_\+pop@{stack\+\_\+pop}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{stack\+\_\+pop()}{stack\_pop()}}
+{\footnotesize\ttfamily Data\+\_\+type stack\+\_\+pop (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Take an element from satck. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stack.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+element -\/ if all correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the function \char`\"{}stack\+\_\+\+O\+K\char`\"{} finds problems in the stacks, it sends an error code to print problems. \\
+\hline
+{\em Assert stack-\/$>$data } & if there are problems with the transfer of stack-\/$>$data. \\
+\hline
+{\em Assert satck } & if there are problems with the transfer of stack. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_a3124facd30d07bead9e29e156c9b4967}\label{stack_8c_a3124facd30d07bead9e29e156c9b4967}} 
+\index{stack.\+c@{stack.\+c}!stack\+\_\+print@{stack\+\_\+print}}
+\index{stack\+\_\+print@{stack\+\_\+print}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{stack\+\_\+print()}{stack\_print()}}
+{\footnotesize\ttfamily int stack\+\_\+print (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Print elements of stack. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stack.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Don\textquotesingle{}t take an element from satck. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+0 -\/ if all correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the function \char`\"{}stack\+\_\+\+O\+K\char`\"{} finds problems in the stacks, it sends an error code to print problems. \\
+\hline
+{\em Assert stack-\/$>$data } & if there are problems with the transfer of stack-\/$>$data. \\
+\hline
+{\em Assert satck } & if there are problems with the transfer of stack. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_ab3ee341928ab8f046a9aaf89ad8c71d3}\label{stack_8c_ab3ee341928ab8f046a9aaf89ad8c71d3}} 
+\index{stack.\+c@{stack.\+c}!stack\+\_\+push@{stack\+\_\+push}}
+\index{stack\+\_\+push@{stack\+\_\+push}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{stack\+\_\+push()}{stack\_push()}}
+{\footnotesize\ttfamily int stack\+\_\+push (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack,  }\item[{Data\+\_\+type}]{new\+\_\+element }\end{DoxyParamCaption})}
+
+
+
+Push an element to satck. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stack.} & \\
+\hline
+\mbox{\tt in}  & {\em new\+\_\+element.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Type of element should be Data\+\_\+type. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+0 -\/ if all correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the function \char`\"{}stack\+\_\+\+O\+K\char`\"{} finds problems in the stacks, it sends an error code to print problems. \\
+\hline
+{\em Assert stack-\/$>$data } & if there are problems with the transfer of stack-\/$>$data. \\
+\hline
+{\em Assert satck } & if there are problems with the transfer of stack. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_a37dc4e8914695ce0822639d2debb6dda}\label{stack_8c_a37dc4e8914695ce0822639d2debb6dda}} 
+\index{stack.\+c@{stack.\+c}!stack\+\_\+size@{stack\+\_\+size}}
+\index{stack\+\_\+size@{stack\+\_\+size}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{stack\+\_\+size()}{stack\_size()}}
+{\footnotesize\ttfamily int stack\+\_\+size (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Get size of stack. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stack.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size -\/ if all correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the function \char`\"{}stack\+\_\+\+O\+K\char`\"{} finds problems in the stacks, it sends an error code to print problems. \\
+\hline
+{\em Assert stack-\/$>$data } & if there are problems with the transfer of stack-\/$>$data. \\
+\hline
+{\em Assert satck } & if there are problems with the transfer of stack. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_a11ada4238d6646adfa775709b15cd97f}\label{stack_8c_a11ada4238d6646adfa775709b15cd97f}} 
+\index{stack.\+c@{stack.\+c}!sum\+\_\+of\+\_\+elements@{sum\+\_\+of\+\_\+elements}}
+\index{sum\+\_\+of\+\_\+elements@{sum\+\_\+of\+\_\+elements}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{sum\+\_\+of\+\_\+elements()}{sum\_of\_elements()}}
+{\footnotesize\ttfamily Data\+\_\+type sum\+\_\+of\+\_\+elements (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
+
+
+
+Counts the sum of stack elements. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em stack.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+control\+\_\+summ -\/ if all correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the function \char`\"{}stack\+\_\+\+O\+K\char`\"{} finds problems in the stacks, it sends an error code to print problems. \\
+\hline
+{\em Assert stack-\/$>$data } & if there are problems with the transfer of stack-\/$>$data. \\
+\hline
+{\em Assert satck } & if there are problems with the transfer of stack. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{stack_8c_ae9b06a4e5b4aa1e99fb27bd47b1209ba}\label{stack_8c_ae9b06a4e5b4aa1e99fb27bd47b1209ba}} 
+\index{stack.\+c@{stack.\+c}!unit\+\_\+test@{unit\+\_\+test}}
+\index{unit\+\_\+test@{unit\+\_\+test}!stack.\+c@{stack.\+c}}
+\subsubsection{\texorpdfstring{unit\+\_\+test()}{unit\_test()}}
+{\footnotesize\ttfamily int unit\+\_\+test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tests all functions. 
+
+\begin{DoxyReturn}{Returns}
+0 -\/ if all correct, -\/1 -\/ if there is any problems. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Printf} & \char`\"{}passed\char`\"{} if function work propely, or print error. \\
+\hline
+\end{DoxyExceptions}
